@@ -69,7 +69,7 @@ export default function RootLayout({
         <link rel="preload" href="/netflix-sound.mp3" as="audio" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased cursor-none`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased`}
       >
         <CustomCursor />
         <ConditionalHeader />

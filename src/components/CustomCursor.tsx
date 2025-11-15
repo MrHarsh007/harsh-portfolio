@@ -7,9 +7,36 @@ export default function CustomCursor() {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [isClicking, setIsClicking] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const animationFrameRef = useRef<number | undefined>(undefined);
 
     useEffect(() => {
+        // Detect if device is mobile
+        const checkMobile = () => {
+            const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                window.matchMedia('(max-width: 768px)').matches ||
+                ('ontouchstart' in window);
+            setIsMobile(mobile);
+
+            // Show/hide default cursor based on device type
+            if (mobile) {
+                document.body.style.cursor = 'auto';
+            } else {
+                document.body.style.cursor = 'none';
+            }
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+        };
+    }, []);
+
+    useEffect(() => {
+        // Don't set up cursor tracking on mobile
+        if (isMobile) return;
         let rawMouseX = 0;
         let rawMouseY = 0;
 
@@ -106,7 +133,10 @@ export default function CustomCursor() {
                 cancelAnimationFrame(animationFrameRef.current);
             }
         };
-    }, []);
+    }, [isMobile]);
+
+    // Don't render custom cursor on mobile
+    if (isMobile) return null;
 
     return (
         <>
