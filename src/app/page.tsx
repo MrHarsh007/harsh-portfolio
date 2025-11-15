@@ -1,65 +1,95 @@
-import Image from "next/image";
+// pages/index.tsx or app/page.tsx
+'use client';
 
-export default function Home() {
+import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+
+export default function NetflixIntro() {
+  const router = useRouter();
+  const [animate, setAnimate] = useState(false);
+  const [started, setStarted] = useState(false);
+  const [showLetterAnimation, setShowLetterAnimation] = useState(false);
+  const [zoomOutLetters, setZoomOutLetters] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (!started) return;
+
+    // Start animation shortly after user starts intro
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [started]);
+
+  const handleStart = () => {
+    setShowLetterAnimation(true);
+
+    // Play sound
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error('Audio playback failed:', error);
+      });
+    }
+
+    // After letters animation completes (3.5s), start zoom out (0.5s)
+    setTimeout(() => {
+      setZoomOutLetters(true);
+    }, 3800);
+
+    // Navigate to browse page after complete animation (4s)
+    setTimeout(() => {
+      router.push('/browse');
+    }, 4500);
+  };
+
+  const name = "HARSH PORWAL";
+  const letters = name.split('');
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="relative flex items-center justify-center h-screen bg-[#141414] overflow-hidden">
+      {/* Fullscreen Letter Animation */}
+      {showLetterAnimation && (
+        <div className={`absolute inset-0 z-50 flex items-center justify-center gap-2 md:gap-4 px-4 ${zoomOutLetters ? 'animate-zoom-out-letters' : ''}`}>
+          {letters.map((letter, index) => (
+            <div
+              key={index}
+              className="letter-typography text-4xl md:text-6xl lg:text-8xl font-black text-[#E50914]"
+              style={{
+                animationDelay: `${index * 0.26}s`,
+                textShadow: '0 0 20px rgba(229, 9, 20, 0.6), 0 0 40px rgba(229, 9, 20, 0.4), 0 0 60px rgba(229, 9, 20, 0.2)'
+              }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              {letter === ' ' ? '\u00A0' : letter}
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      )}
+
+      <div className="w-full max-w-4xl px-8 flex flex-col items-center gap-8">
+        {!showLetterAnimation && (
+          <button
+            onClick={handleStart}
+            className="group mt-2 px-10 py-4 rounded-full from-[#E50914] via-red-600 to-[#ff4b4b] text-white text-lg md:text-xl font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(229,9,20,0.6)] hover:shadow-[0_0_45px_rgba(229,9,20,0.9)] transition-all duration-300 flex items-center gap-3"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            <span className="relative">
+              <span className="block text-xs font-normal tracking-[0.35em] opacity-70">ENTER</span>
+              <span className="block -mt-1">PORTFOLIO</span>
+            </span>
+            <span className="h-8  bg-white/40 group-hover:h-10 transition-all" />
+            <span className="text-sm md:text-base font-normal tracking-[0.25em] opacity-80 group-hover:opacity-100">
+              PLAY INTRO
+            </span>
+          </button>
+        )}
+      </div>
+
+      {/* Audio element */}
+      <audio ref={audioRef} preload="auto">
+        <source src="/netflix-sound.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </div>
   );
 }
