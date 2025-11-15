@@ -148,7 +148,7 @@ export const SkillsPageData = {
 
 export const AboutPage = {
     title: "About Me",
-    subtitle: `${PERSONAL_INFO.name} - ${PERSONAL_INFO.profession}`,
+    subtitle: "Harsh Porwal – Mobile Developer | GCP Learner | Google ADK Explorer",
     highlights: [
         {
             icon: "Code2",

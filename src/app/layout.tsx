@@ -28,17 +28,24 @@ export const metadata: Metadata = {
   keywords: ["Flutter Developer", "Mobile App Development", "Harsh Porwal", "BLoC", "GetX", "Firebase", "Google Cloud Platform"],
   authors: [{ name: "Harsh Porwal" }],
   creator: "Harsh Porwal",
+  icons: {
+    icon: '/harsh.png',
+    shortcut: '/harsh.png',
+    apple: '/harsh.png',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Harsh Porwal Portfolio",
     title: "Harsh Porwal - Flutter Developer Portfolio",
     description: "Flutter Developer with 2+ years of experience building scalable mobile and web applications.",
+    images: ['/harsh.png'],
   },
   twitter: {
     card: "summary_large_image",
     title: "Harsh Porwal - Flutter Developer Portfolio",
     description: "Flutter Developer with 2+ years of experience building scalable mobile and web applications.",
+    images: ['/harsh.png'],
   },
 };
 

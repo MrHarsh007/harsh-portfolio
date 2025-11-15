@@ -81,7 +81,7 @@ export default function ProjectsPage() {
                                 {project.desc.length > 150 && (
                                     <button
                                         onClick={() => toggleDescription(index)}
-                                        className="md:hidden mt-2 text-[#E50914] hover:text-[#c4070f] text-sm font-medium transition-colors duration-200"
+                                        className="md:hidden mt-2 text-[#E50914] hover:text-[#c4070f] text-sm font-medium transition-colors duration-200 cursor-pointer"
                                     >
                                         {expandedProjects.includes(index) ? 'View Less' : 'View More'}
                                     </button>

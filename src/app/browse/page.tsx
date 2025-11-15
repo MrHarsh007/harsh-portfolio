@@ -66,7 +66,7 @@ export default function BrowsePage() {
                         <button
                             key={profile.name}
                             onClick={() => handleProfileClick(profile.path)}
-                            className={`group flex flex-col items-center gap-3 focus:outline-none`}
+                            className={`group flex flex-col items-center gap-3 focus:outline-none cursor-pointer`}
                         >
                             <div
                                 className={`
@@ -107,7 +107,7 @@ export default function BrowsePage() {
             <div className="mt-16 md:mt-20">
                 <button
                     onClick={() => router.push('/')}
-                    className="px-8 py-3 border-2 border-gray-600 text-gray-400 hover:border-white hover:text-white transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
+                    className="px-8 py-3 border-2 border-gray-600 text-gray-400 hover:border-white hover:text-white transition-all duration-300 text-sm md:text-base tracking-widest uppercase cursor-pointer"
                 >
                     Back to Intro
                 </button>

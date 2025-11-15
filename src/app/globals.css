@@ -47,6 +47,22 @@ body {
   .animate-zoom-out-letters {
     animation: zoomOutLetters 0.5s forwards ease-in-out;
   }
+
+  .animate-gradient-x {
+    animation: gradientX 3s ease infinite;
+  }
+
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-float-skill {
+    animation: floatSkill 15s ease-in-out infinite;
+  }
 }
 
 @keyframes fadeIn {
@@ -95,5 +111,39 @@ body {
   100% {
     transform: scale(5);
     opacity: 0;
+  }
+}
+
+@keyframes gradientX {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes floatSkill {
+  0% {
+    transform: translateX(var(--translate-x, 0)) translateY(0) rotate(var(--rotation, 0deg)) scale(var(--scale, 1));
+  }
+
+  25% {
+    transform: translateX(calc(var(--translate-x, 0) * 1.2)) translateY(-20px) rotate(calc(var(--rotation, 0deg) + 5deg)) scale(var(--scale, 1));
+  }
+
+  50% {
+    transform: translateX(calc(var(--translate-x, 0) * 0.8)) translateY(-10px) rotate(calc(var(--rotation, 0deg) - 5deg)) scale(var(--scale, 1));
+  }
+
+  75% {
+    transform: translateX(calc(var(--translate-x, 0) * 1.1)) translateY(-30px) rotate(calc(var(--rotation, 0deg) + 3deg)) scale(var(--scale, 1));
+  }
+
+  100% {
+    transform: translateX(var(--translate-x, 0)) translateY(0) rotate(var(--rotation, 0deg)) scale(var(--scale, 1));
   }
 }
