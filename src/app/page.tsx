@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { PERSONAL_INFO, Skills } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
-import { Briefcase, Rocket } from 'lucide-react';
+import { Briefcase, Sparkles, Clapperboard } from 'lucide-react';
 
 
 export default function NetflixIntro() {
@@ -119,9 +119,9 @@ export default function NetflixIntro() {
               size="xl"
               className="bg-[#E50914]! hover:bg-[#ff1f1f]! text-white! font-bold tracking-wide shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              {/* <Briefcase className="mr-2" size={20} /> */}
-              Begin Your Journey
-              <Rocket className="ml-2" size={20} />
+              <Clapperboard className="mr-2 animate-pulse ml-2" size={20} />
+              Ready? Action...
+              <Sparkles size={18} className="animate-pulse ml-2" />
             </Button>
           </>
         )}
