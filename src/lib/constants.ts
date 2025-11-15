@@ -2,17 +2,17 @@ export const PERSONAL_INFO = {
     name: 'Harsh Porwal',
     profession: 'Flutter Developer',
     overview: "I'm a Flutter Developer with experience building scalable mobile and web applications using BloC/ GetX and REST APIs.I've created projects such as CSE Learning Hub and Cloud Certify, gaining hands-on experience with the Google Cloud GUI while learning GCP and Google ADK. Recognized for strong problem-solving skills, leadership, and teamwork, I'm dedicated to developing efficient, user - focused digital solutions.",
-    profileImage: '/harsh4.png',
-    profileImage2: '/harsh3.png',
+    profileImage: '/harsh_main.png',
+    profileImage2: '/harsh.png',
     email: 'Porwalharsh007@gmail.com',
     phone: '+91 8460946542',
     cvPath: '/cv.pdf',
 };
 
 export const SOCIAL_LINKS = {
-    linkedin: 'https://linkedin.com/in/yourprofile',
-    github: 'https://github.com/yourprofile',
-    instagram: 'https://instagram.com/yourprofile',
+    linkedin: 'https://linkedin.com/in/erharshporwal',
+    github: 'https://github.com/MrHarsh007',
+    instagram: 'https://www.instagram.com/hrporwal_007',
 };
 
 export const BUTTON_LABELS = {
