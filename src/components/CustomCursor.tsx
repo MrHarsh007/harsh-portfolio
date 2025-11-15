@@ -68,7 +68,7 @@ export default function CustomCursor() {
             let targetY = rawMouseY;
 
             if (closestElement) {
-                const rect = closestElement.getBoundingClientRect();
+                const rect = (closestElement as HTMLElement).getBoundingClientRect();
                 const elementCenterX = rect.left + rect.width / 2;
                 const elementCenterY = rect.top + rect.height / 2;
 
