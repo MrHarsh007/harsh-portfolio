@@ -7,17 +7,18 @@ import { useEffect, useState } from 'react';
 
 export default function HomePage() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     useEffect(() => {
         setIsVisible(true);
     }, []);
 
     return (
-        <div className="min-h-screen bg-linear-to-r from-[#1a0a0a] via-[#141414] to-black text-white flex items-center justify-center px-6 md:px-20 lg:px-40">
-            <div className="w-full max-w-2/3 flex flex-col items-center text-center space-y-8 mt-20">
+        <div className="min-h-screen bg-linear-to-r from-[#1a0a0a] via-[#141414] to-black text-white flex items-center justify-center">
+            <div className="w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center space-y-8">
 
                 {/* Profile Photo */}
-                <div className={`relative w-42 h-42 md:w-52 md:h-52 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+                <div className={`relative w-42 h-42 md:w-52 md:h-52 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'} mt-20`}>
                     <div className="absolute inset-0 bg-red-500/30 blur-xl rounded-lg"></div>
                     <div className="relative w-full h-full bg-gray-800 rounded-lg overflow-hidden border-2 border-red-500 shadow-[0_0_50px_rgba(239,68,68,0.4)]">
                         <Image
@@ -35,9 +36,18 @@ export default function HomePage() {
                     <h1 className="text-2xl md:text-4xl font-bold text-[#E50914]">
                         {PERSONAL_INFO.profession}
                     </h1>
-                    <p className="text-lg md:text-lg text-gray-300 leading-relaxed w-fit -tracking-tighter">
-                        {PERSONAL_INFO.overview}
-                    </p>
+                    <div className="relative w-full">
+                        <p className={`text-base md:text-lg text-gray-300 leading-relaxed text-center mx-auto ${!isExpanded ? 'line-clamp-5 md:line-clamp-none' : ''}`}>
+                            {PERSONAL_INFO.overview}
+                        </p>
+                        {/* View More Button - Mobile Only */}
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="md:hidden mt-2 text-[#E50914] hover:text-[#ff1f1f] font-semibold text-sm transition-colors cursor-pointer"
+                        >
+                            {isExpanded ? 'View Less' : 'View More'}
+                        </button>
+                    </div>
                 </div>
 
                 {/* Action Buttons */}
@@ -59,7 +69,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Social Media Links */}
-                <div className={`flex gap-4 pt-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                <div className={`flex gap-4 pt-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} mb-5`}>
                     <a
                         href={SOCIAL_LINKS.linkedin}
                         target="_blank"

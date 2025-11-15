@@ -1,31 +1,50 @@
 // pages/index.tsx or app/page.tsx
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { PERSONAL_INFO } from '@/lib/constants';
-import { Play, Sparkles, ChevronRight } from 'lucide-react';
+import { PERSONAL_INFO, Skills } from '@/lib/constants';
+import { Button } from '@/components/ui/button';
+import { Briefcase, Rocket } from 'lucide-react';
 
 
 export default function NetflixIntro() {
   const router = useRouter();
-  const [animate, setAnimate] = useState(false);
-  const [started, setStarted] = useState(false);
   const [showLetterAnimation, setShowLetterAnimation] = useState(false);
   const [zoomOutLetters, setZoomOutLetters] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [floatingSkills, setFloatingSkills] = useState<Array<{
+    name: string;
+    top: number;
+    left: number;
+    duration: number;
+    delay: number;
+    direction: 'left' | 'right';
+    opacity: number;
+    size: number;
+  }>>([]);
 
   useEffect(() => {
-    if (!started) return;
+    // Flatten all skills from all categories
+    const allSkills = Skills.flatMap(category => category.skills);
 
-    // Start animation shortly after user starts intro
-    const timer = setTimeout(() => {
-      setAnimate(true);
-    }, 200);
+    // Multiply by 4 to cover the whole screen
+    const multipliedSkills = [...allSkills, ...allSkills, ...allSkills, ...allSkills];
 
-    return () => clearTimeout(timer);
-  }, [started]);
+    // Generate random properties for each skill
+    const randomSkills = multipliedSkills.map((skill, index) => ({
+      name: skill,
+      top: Math.random() * 100, // Random vertical position (0-100%)
+      left: Math.random() * 100, // Random horizontal position (0-100%)
+      duration: 15 + Math.random() * 25, // Animation duration between 15-40s
+      delay: Math.random() * 5, // Random delay 0-5s
+      direction: Math.random() > 0.5 ? 'left' : 'right' as 'left' | 'right',
+      opacity: 0.03 + Math.random() * 0.07, // Opacity between 0.03-0.1
+      size: 0.7 + Math.random() * 0.5, // Size multiplier 0.7-1.2
+    }));
+
+    setFloatingSkills(randomSkills);
+  }, []);
 
   const handleStart = () => {
     setShowLetterAnimation(true);
@@ -52,7 +71,27 @@ export default function NetflixIntro() {
   const letters = name.split('');
 
   return (
-    <div className="relative flex items-center justify-center h-screen bg-[#141414] overflow-hidden">
+    <div className="relative flex items-center justify-center h-screen overflow-hidden">
+      {/* Floating Skills Background - Only show when button is visible */}
+      {!showLetterAnimation && (
+        <div className="absolute inset-0 pointer-events-none">
+          {floatingSkills.map((skill, index) => (
+            <div
+              key={`${skill.name}-${index}`}
+              className="absolute whitespace-nowrap text-white font-medium px-4 py-2 rounded-lg border border-gray-700/30"
+              style={{
+                top: `${skill.top}%`,
+                left: `${skill.left}%`,
+                opacity: skill.opacity * 5,
+                fontSize: `${skill.size * 1.2}rem`,
+                animation: `float-${skill.direction} ${skill.duration}s linear ${skill.delay}s infinite`,
+              }}
+            >
+              {skill.name}
+            </div>
+          ))}
+        </div>
+      )}
       {/* Fullscreen Letter Animation */}
       {showLetterAnimation && (
         <div className={`absolute inset-0 z-50 flex items-center justify-center gap-2 md:gap-4 px-4 ${zoomOutLetters ? 'animate-zoom-out-letters' : ''}`}>
@@ -71,58 +110,19 @@ export default function NetflixIntro() {
         </div>
       )}
 
-      <div className="w-full max-w-4xl px-8 flex flex-col items-center gap-8 relative">
+      <div className="w-full max-w-4xl px-8 flex flex-col items-center gap-8 relative z-10">
         {!showLetterAnimation && (
           <>
-            {/* Creative Tooltip */}
-            {showTooltip && (
-              <div className="absolute -top-20 left-1/2 -translate-x-1/2 animate-bounce">
-                <div className="relative bg-linear-to-r from-[#E50914] to-[#ff4b4b] text-white px-6 py-3 rounded-lg shadow-2xl shadow-red-500/50">
-                  <div className="flex items-center gap-2">
-                    <Sparkles size={18} className="animate-pulse" />
-                    <span className="text-sm font-medium">Click below to start the experience!</span>
-                    <Sparkles size={18} className="animate-pulse" />
-                  </div>
-                  {/* Arrow */}
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-[#ff4b4b]"></div>
-                </div>
-              </div>
-            )}
-
-            {/* Modern Button */}
-            <button
+            {/* Shadcn Button with Creative Text */}
+            <Button
               onClick={handleStart}
-              onMouseEnter={() => setShowTooltip(false)}
-              onMouseLeave={() => setShowTooltip(true)}
-              className="group relative mt-2 px-12 py-6 rounded-lg bg-linear-to-r from-[#E50914] via-[#ff1f1f] to-[#E50914] text-white text-lg md:text-xl font-bold tracking-wide uppercase shadow-[0_0_40px_rgba(229,9,20,0.7)] hover:shadow-[0_0_60px_rgba(229,9,20,1)] transition-all duration-500 flex items-center gap-4 cursor-pointer overflow-hidden bg-size-[200%_100%] hover:bg-position-[100%_0] animate-gradient-x"
+              size="xl"
+              className="bg-[#E50914]! hover:bg-[#ff1f1f]! text-white! font-bold tracking-wide shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              {/* Animated background glow */}
-              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-
-              {/* Play icon with animation */}
-              <div className="relative z-10 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-90 transition-all duration-500">
-                <Play size={24} className="fill-white" />
-              </div>
-
-              {/* Text content */}
-              <div className="relative z-10 flex flex-col items-start">
-                <span className="text-xs font-light tracking-[0.3em] opacity-80 group-hover:opacity-100 transition-opacity">WELCOME TO</span>
-                <span className="text-2xl md:text-3xl font-black -mt-1 tracking-tight">MY PORTFOLIO</span>
-              </div>
-
-              {/* Arrow with animation */}
-              <ChevronRight size={32} className="relative z-10 group-hover:translate-x-2 transition-transform duration-300" strokeWidth={3} />
-
-              {/* Pulse rings */}
-              <div className="absolute inset-0 rounded-2xl bg-[#E50914] opacity-0 group-hover:opacity-30 animate-ping"></div>
-            </button>
-
-            {/* Decorative elements */}
-            <div className="flex gap-2 mt-4 animate-pulse">
-              <div className="w-2 h-2 bg-[#E50914] rounded-full"></div>
-              <div className="w-2 h-2 bg-[#E50914]/70 rounded-full animation-delay-150"></div>
-              <div className="w-2 h-2 bg-[#E50914]/40 rounded-full animation-delay-300"></div>
-            </div>
+              {/* <Briefcase className="mr-2" size={20} /> */}
+              Begin Your Journey
+              <Rocket className="ml-2" size={20} />
+            </Button>
           </>
         )}
       </div>
@@ -132,6 +132,26 @@ export default function NetflixIntro() {
         <source src="/netflix-sound.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
+      {/* CSS Animations */}
+      <style jsx>{`
+                @keyframes float-left {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-100vw);
+                    }
+                }
+                
+                @keyframes float-right {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(100vw);
+                    }
+                }
+            `}</style>
     </div>
   );
 }

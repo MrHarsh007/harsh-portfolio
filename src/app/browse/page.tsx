@@ -2,10 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import blue from "../../../public/blue.png"
-import grey from "../../../public/grey.png"
+import green from "../../../public/green.png"
+import mix from "../../../public/mix.png"
 import red from "../../../public/red.png"
 import yellow from "../../../public/yellow.png"
+import white from "../../../public/white.png"
 
 export default function BrowsePage() {
     const router = useRouter();
@@ -15,7 +16,7 @@ export default function BrowsePage() {
             name: 'Home',
             color: 'bg-[#00B4D8]',
             hoverColor: 'hover:ring-[#00B4D8]',
-            icon: blue,
+            icon: mix,
             path: '/home'
         },
         {
@@ -23,14 +24,13 @@ export default function BrowsePage() {
             color: 'bg-[#FFC107]',
             hoverColor: 'hover:ring-[#FFC107]',
             icon: yellow,
-
             path: '/about'
         },
         {
             name: 'Projects',
             color: 'bg-[#6C757D]',
             hoverColor: 'hover:ring-[#6C757D]',
-            icon: grey,
+            icon: green,
             path: '/projects'
         },
         {
@@ -42,9 +42,9 @@ export default function BrowsePage() {
         },
         {
             name: 'Experience',
-            color: 'bg-[#10B981]',
-            hoverColor: 'hover:ring-[#10B981]',
-            icon: blue,
+            color: 'bg-white',
+            hoverColor: 'hover:ring-white',
+            icon: white,
             path: '/experience'
         }
     ];
@@ -55,7 +55,7 @@ export default function BrowsePage() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-[#141414] px-4">
-            <h1 className="text-4xl md:text-6xl font-semibold text-white mb-12 md:mb-20 tracking-tighter text-center">
+            <h1 className="text-4xl md:text-6xl font-semibold text-white mb-12 md:mb-20 mt-10 md:mt-0 tracking-tight text-center px-12">
                 Where would you like to go?
             </h1>
 
@@ -104,7 +104,7 @@ export default function BrowsePage() {
                 })}
             </div>
 
-            <div className="mt-16 md:mt-20">
+            <div className="mt-10 md:mt-16">
                 <button
                     onClick={() => router.push('/')}
                     className="px-8 py-3 border-2 border-gray-600 text-gray-400 hover:border-white hover:text-white transition-all duration-300 text-sm md:text-base tracking-widest uppercase cursor-pointer"

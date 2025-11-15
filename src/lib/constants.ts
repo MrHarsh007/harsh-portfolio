@@ -1,7 +1,7 @@
 export const PERSONAL_INFO = {
     name: 'Harsh Porwal',
     profession: 'Flutter Developer',
-    overview: "I'm a Flutter Developer with experience building scalable mobile and web applications using BloC/ GetX and REST APIs.I've created projects such as CSE Learning Hub and Cloud Certify, gaining hands-on experience with the Google Cloud GUI while learning GCP and Google ADK. Recognized for strong problem-solving skills, leadership, and teamwork, I'm dedicated to developing efficient, user - focused digital solutions.",
+    overview: "I'm a Flutter Developer with experience building scalable mobile and web applications using BloC/ GetX and REST APIs. I've created projects such as CSE Learning Hub and Cloud Certify, gaining hands-on experience with the Google Cloud GUI while learning GCP and Google ADK. Recognized for strong problem-solving skills, leadership, and teamwork, I'm dedicated to developing efficient, user - focused digital solutions.",
     profileImage: '/harsh_main.png',
     profileImage2: '/harsh.png',
     email: 'Porwalharsh007@gmail.com',
@@ -49,7 +49,7 @@ const Projects = [
         "designation": "Client Project",
         "desc": "Developed a comprehensive Flutter application for movie and TV show enthusiasts, enabling users to discover trending movies, explore detailed information, track favorites, and enjoy quizzes and notes for a personalized experience. Integrated Firebase services for analytics, crash reporting, and remote configuration, along with Google Mobile Ads for monetization. Implemented offline support with SQLite and ensured a smooth, modern UI with responsive design and onboarding screens.",
         "link": "https://www.themoviedb.org/",
-        "techStack": ["Flutter", "Bloc Pattern", "Clean Architecture", "Firebase", "SQLite", "Dio", "Go Router", "Google Mobile Ads", "Get It", "Injectable"]
+        "techStack": ["Flutter", "BLoC", "Clean Architecture", "Firebase", "SQLite", "Dio", "Go Router", "Google Mobile Ads", "Get It", "Injectable"]
     },
     {
         title: "CSE Learning Hub",
@@ -75,7 +75,7 @@ export const Skills = [
     {
         category: "State Management",
         icon: "GitBranch",
-        skills: ["Bloc Pattern", "GetX", "Dependency Injection", "GetIt", "Injectable"]
+        skills: ["BLoC", "GetX", "Dependency Injection", "GetIt", "Injectable"]
     },
     {
         category: "Google Services",

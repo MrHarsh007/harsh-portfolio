@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import ConditionalHeader from "@/components/ConditionalHeader";
+import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Harsh Porwal" }],
   creator: "Harsh Porwal",
   icons: {
-    icon: '/harsh.png',
-    shortcut: '/harsh.png',
-    apple: '/harsh.png',
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
   openGraph: {
     type: "website",
@@ -56,9 +57,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload critical images for better performance */}
+        <link rel="preload" href="/harsh_main.png" as="image" />
+        <link rel="preload" href="/harsh.png" as="image" />
+        <link rel="preload" href="/harsh_netflix.png" as="image" />
+        <link rel="preload" href="/blue.png" as="image" />
+        <link rel="preload" href="/grey.png" as="image" />
+        <link rel="preload" href="/red.png" as="image" />
+        <link rel="preload" href="/yellow.png" as="image" />
+        <link rel="preload" href="/netflix-sound.mp3" as="audio" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased cursor-none`}
       >
+        <CustomCursor />
         <ConditionalHeader />
         {children}
       </body>
