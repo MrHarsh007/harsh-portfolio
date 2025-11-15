@@ -38,9 +38,10 @@ export default function AboutPageComponent() {
                         <div className="absolute inset-0 bg-[#E50914]/30 blur-xl rounded-full"></div>
                         <div className="relative w-full h-full bg-gray-800 rounded-full overflow-hidden shadow-[0_0_30px_rgba(239,68,68,0.3)] border-2 border-[#E50914]/30">
                             <Image
-                                src={PERSONAL_INFO.profileImage2}
+                                src={PERSONAL_INFO.profileCartoon2}
                                 alt="Profile Photo"
                                 fill
+
                                 className="object-cover"
                                 priority
                             />
