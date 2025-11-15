@@ -20,9 +20,10 @@ export default function BrowsePage() {
         },
         {
             name: 'About',
-            color: 'bg-[#10B981]',
-            hoverColor: 'hover:ring-[#10B981]',
-            icon: blue,
+            color: 'bg-[#FFC107]',
+            hoverColor: 'hover:ring-[#FFC107]',
+            icon: yellow,
+
             path: '/about'
         },
         {
@@ -41,9 +42,9 @@ export default function BrowsePage() {
         },
         {
             name: 'Experience',
-            color: 'bg-[#FFC107]',
-            hoverColor: 'hover:ring-[#FFC107]',
-            icon: yellow,
+            color: 'bg-[#10B981]',
+            hoverColor: 'hover:ring-[#10B981]',
+            icon: blue,
             path: '/experience'
         }
     ];

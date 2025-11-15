@@ -3,6 +3,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { PERSONAL_INFO } from '@/lib/constants';
+
 
 export default function NetflixIntro() {
   const router = useRouter();
@@ -36,15 +38,15 @@ export default function NetflixIntro() {
     // After letters animation completes (3.5s), start zoom out (0.5s)
     setTimeout(() => {
       setZoomOutLetters(true);
-    }, 3800);
+    }, 3200);
 
     // Navigate to browse page after complete animation (4s)
     setTimeout(() => {
       router.push('/browse');
-    }, 4500);
+    }, 4000);
   };
 
-  const name = "HARSH PORWAL";
+  const name = PERSONAL_INFO.name;
   const letters = name.split('');
 
   return (
@@ -57,8 +59,8 @@ export default function NetflixIntro() {
               key={index}
               className="letter-typography text-4xl md:text-6xl lg:text-8xl font-black text-[#E50914]"
               style={{
-                animationDelay: `${index * 0.26}s`,
-                textShadow: '0 0 20px rgba(229, 9, 20, 0.6), 0 0 40px rgba(229, 9, 20, 0.4), 0 0 60px rgba(229, 9, 20, 0.2)'
+                animationDelay: `${index * 0.2}s`,
+                textShadow: '0 0 20px rgba(229, 9, 20, 0.4), 0 0 40px rgba(229, 9, 20, 0.2), 0 0 60px rgba(229, 9, 20, 0)'
               }}
             >
               {letter === ' ' ? '\u00A0' : letter}
