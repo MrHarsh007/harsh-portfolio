@@ -71,7 +71,7 @@ export default function NetflixIntro() {
   const letters = name.split('');
 
   return (
-    <div className="relative flex items-center justify-center h-screen overflow-hidden">
+    <div className="relative flex items-center justify-center h-screen overflow-hidden min-h-screen bg-linear-to-r from-[#1a0a0a] via-[#141414] to-black text-white">
       {/* Floating Skills Background - Only show when button is visible */}
       {!showLetterAnimation && (
         <div className="absolute inset-0 pointer-events-none">
