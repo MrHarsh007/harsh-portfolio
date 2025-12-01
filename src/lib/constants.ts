@@ -49,7 +49,7 @@ const Projects = [
         "title": "MoviesBox",
         "designation": "Client Project",
         "desc": "Developed a comprehensive Flutter application for movie and TV show enthusiasts, enabling users to discover trending movies, explore detailed information, track favorites, and enjoy quizzes and notes for a personalized experience. Integrated Firebase services for analytics, crash reporting, and remote configuration, along with Google Mobile Ads for monetization. Implemented offline support with SQLite and ensured a smooth, modern UI with responsive design and onboarding screens.",
-        "link": "https://www.themoviedb.org/",
+        "link": "https://github.com/MrHarsh007/moviebox",
         "techStack": ["Flutter", "BLoC", "Clean Architecture", "Firebase", "SQLite", "Dio", "Go Router", "Google Mobile Ads", "Get It", "Injectable"]
     },
     {
