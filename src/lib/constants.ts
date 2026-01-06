@@ -22,18 +22,58 @@ export const BUTTON_LABELS = {
 };
 
 export const ABOUT_ME = {
-    detailedOverview: `I am a dedicated and adaptable Flutter Developer with hands - on experience in building scalable, user- focused mobile and web applications.I enjoy turning ideas into real, functional products and thrive in environments where I can solve problems, collaborate with diverse teams, and continuously learn new technologies.
+    detailedOverview: `I am a dedicated and adaptable Flutter Developer with hands-on experience in building scalable, user-focused mobile and web applications. I enjoy turning ideas into real, functional products and thrive in environments where I can solve problems, collaborate with diverse teams, and continuously learn new technologies.
 
-My journey in software development has allowed me to work with international clients, take ownership of project modules, and deliver high - quality solutions within tight deadlines.I have experience implementing clean architecture, integrating REST APIs, managing state with BloC and GetX, and enhancing user experience through intuitive UI / UX design.I also have practical exposure to the complete app release cycle for both the Google Play Store and Apple App Store.
+My journey in software development has allowed me to work with international clients, take ownership of project modules, and deliver high-quality solutions within tight deadlines. I have experience implementing clean architecture, integrating REST APIs, managing state with BLoC and GetX, and enhancing user experience through intuitive UI/UX design. I also have practical exposure to the complete app release cycle for both the Google Play Store and Apple App Store.
 
 I am passionate about creating products that genuinely help users—this is reflected in the applications I've built, such as CSE Learning Hub, which has supported over 1500 engineering students, and Cloud Certify, a platform designed to help learners prepare for Google Cloud certifications.
 
-Along with mobile development, I also have hands - on experience with Google Cloud's GUI, working with essential GCP tools and services.I possess foundational knowledge of Google Cloud concepts and am actively learning Google Cloud Platform(GCP) and Google - ADK to expand my skill set and strengthen my cloud expertise.
+In addition to mobile development, I have earned two Google Cloud certifications: Associate Cloud Engineer and Generative AI Leader. These certifications validate my expertise in Google Cloud Platform (GCP), including hands-on experience with Compute Engine, Cloud Storage, Cloud Run, Cloud Functions, Identity and Access Management (IAM), and Google ADK. I also have knowledge of AI technologies and generative AI solutions.
 
-Beyond technical skills, I am recognized for my leadership, communication, and problem - solving abilities.Whether guiding interns, collaborating with cross - functional teams, or exploring new cloud technologies, I approach every challenge with curiosity, responsibility, and a strong desire to improve.
+Beyond technical skills, I am recognized for my leadership, communication, and problem-solving abilities. Whether guiding interns, collaborating with cross-functional teams, or exploring new technologies, I approach every challenge with curiosity, responsibility, and a strong desire to improve.
 
 I am constantly exploring better ways to build efficient, maintainable, and impactful digital solutions—and I'm motivated to continue growing as a developer while contributing meaningfully to the projects I work on.`,
 };
+
+export const CERTIFICATIONS = [
+    {
+        title: "Associate Cloud Engineer Certification",
+        issuer: "Google",
+        issueDate: "Jan 2026",
+        expiryDate: "Jan 2029",
+        credentialId: "3539357db9b3442dbb68636f12523979",
+        credentialUrl: "https://www.credly.com/badges/93ed2cd3-f7a6-4541-8402-5c687ff8fae7/public_url",
+        icon: "Cloud",
+        skills: [
+            "Google Cloud Platform (GCP)",
+            "Cloud Engineering",
+            "Compute Engine",
+            "Cloud Storage",
+            "Virtual Machines",
+            "Application Deployment",
+            "Virtual Private Cloud (VPC)",
+            "Cloud Networking",
+            "Identity and Access Management (IAM)",
+            "Associate Cloud Engineer"
+        ]
+    },
+    {
+        title: "Generative AI Leader Certification",
+        issuer: "Google",
+        issueDate: "Nov 2025",
+        expiryDate: "Nov 2028",
+        credentialId: "dd67d216022e42cdb1fc124701b6050e",
+        credentialUrl: "https://www.credly.com/badges/595449fc-b699-4811-88b0-6253086e6e0a/public_url",
+        icon: "Sparkles",
+        skills: [
+            "Artificial Intelligence (AI)",
+            "Artificial Intelligence for Business",
+            "Cloud Computing",
+            "Generative AI",
+            "Google Cloud Platform (GCP)"
+        ]
+    }
+];
 
 
 
@@ -79,14 +119,42 @@ export const Skills = [
         skills: ["BLoC", "GetX", "Dependency Injection", "GetIt", "Injectable"]
     },
     {
-        category: "Google Services",
+        category: "Google Cloud Platform",
+        icon: "Cloud",
+        skills: [
+            "Compute Engine",
+            "Cloud Storage",
+            "Identity and Access Management (IAM)",
+            "Cloud Run",
+            "Cloud Functions",
+            "Google ADK"
+        ]
+    },
+    {
+        category: "AI & Machine Learning",
+        icon: "Brain",
+        skills: [
+            "Artificial Intelligence (AI)",
+            "Generative AI",
+            "AI for Business",
+            "Machine Learning Basics",
+            "Google Cloud AI Solutions"
+        ]
+    },
+    {
+        category: "Firebase Services",
         icon: "Flame",
-        skills: ["Firestore", "Firebase Auth", "Remote Config", "Firebase Analytics", "Firebase Crashlytics", "REST APIs", "Dio", "Google ADK"]
+        skills: ["Firestore", "Firebase Auth", "Remote Config", "Firebase Analytics", "Firebase Crashlytics", "REST APIs"]
     },
     {
         category: "Database & Storage",
         icon: "Database",
-        skills: ["SQLite", "Firestore", "Postman"]
+        skills: ["SQLite", "Firestore", "Postman", "Elasticsearch"]
+    },
+    {
+        category: "Backend & APIs",
+        icon: "Server",
+        skills: ["FastAPI", "REST APIs", "Dio", "Microservices", "Serverless Computing", "Dio"]
     },
     {
         category: "Tools & Dev Practices",
@@ -104,9 +172,9 @@ export const Skills = [
         skills: ["Windows", "MacOS"]
     },
     {
-        category: "Cloud Platforms",
-        icon: "Cloud",
-        skills: ["Google Cloud Platform (GCP)"]
+        category: "Security & Networking",
+        icon: "Shield",
+        skills: ["Cloud Security", "Virtual Machines", "VPC", "IAM"]
     },
     {
         category: "Professional Skills",
@@ -149,7 +217,7 @@ export const SkillsPageData = {
 
 export const AboutPage = {
     title: "About Me",
-    subtitle: "Harsh Porwal – Mobile Developer | GCP Learner | Google ADK Explorer",
+    subtitle: "Harsh Porwal – Mobile Developer | Google Cloud Certified | AI Enthusiast",
     highlights: [
         {
             icon: "Code2",
