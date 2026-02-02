@@ -79,6 +79,13 @@ export const CERTIFICATIONS = [
 
 const Projects = [
     {
+        title: "ReviewQR — AI-Powered Review Generation Platform",
+        designation: "Founder & Developer",
+        desc: "ReviewQR is a professional SaaS platform designed to help businesses and sales professionals boost their online reputation. It simplifies the customer feedback loop by combining personalized QR codes with AI-powered review assistance. Key features include AI-powered review generation leveraging Google Gemini AI to help customers draft high-quality, professional reviews in seconds, custom QR & ID card generation for branded QR posters and professional digital ID cards, an employee dashboard for sales staff to manage profiles and review links, and a mobile-first design with zero downloads required.",
+        link: "https://reviewqr-ai.vercel.app",
+        techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Google Gemini AI", "Firebase", "shadcn/ui", "Framer Motion", "Sentry"],
+    },
+    {
         title: "CloudCertify",
         designation: "Co-Founder & Developer",
         desc: "CloudCertify is your smart companion for Google Cloud certification prep. It offers daily practice quizzes, full-length mock tests, performance tracking, and curated resources — all in one seamless platform. Built with a modern full-stack approach, the app uses Firebase for authentication and hosting, FastAPI for backend APIs deployed on Cloud Run, and Elasticsearch for fast search and analytics. The UI, developed in Next.js, ensures a responsive and intuitive user experience. CloudCertify helps users prepare consistently and pass GCP exams with confidence.",
