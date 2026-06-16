@@ -78,7 +78,6 @@ export const CERTIFICATIONS = [
 
 
 const Projects = [
-    ,
     {
         title: "TestSpec-AI — Automated API Testing Platform",
         designation: "Founder & Developer",
