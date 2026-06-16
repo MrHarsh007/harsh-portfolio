@@ -78,6 +78,21 @@ export const CERTIFICATIONS = [
 
 
 const Projects = [
+    ,
+    {
+        title: "TestSpec-AI — Automated API Testing Platform",
+        designation: "Founder & Developer",
+        desc: "An AI-powered testing platform for FastAPI and OpenAPI endpoints. Users can dynamically generate, execute, and schedule test cases by simply providing a ReDoc link or OpenAPI schema. Features include automated test generation, custom workflow creation, detailed test summaries, and an integrated AI chatbot for testing assistance.",
+        link: "https://www.testspec.tech/",
+        techStack: ["Next.js", "FastAPI", "Google Cloud Platform", "Vertex AI", "Python", "TypeScript"],
+    },
+    {
+        title: "Maya AI — Devotional AI Chat & Voice Assistant",
+        designation: "Creator & Developer",
+        desc: "A devotional AI chatbot inspired by the Bhagavad Gita, enabling users to interact via text and voice calls in both Hindi and English. Built to provide context-aware responses based on spiritual teachings.",
+        link: "https://maya-ai-one.vercel.app/",
+        techStack: ["Next.js", "FastAPI", "Google Cloud Platform", "ElevenLabs AI", "Python", "TypeScript"],
+    },
     {
         title: "ReviewQR — AI-Powered Review Generation Platform",
         designation: "Founder & Developer",
@@ -89,7 +104,7 @@ const Projects = [
         title: "CloudCertify",
         designation: "Co-Founder & Developer",
         desc: "CloudCertify is your smart companion for Google Cloud certification prep. It offers daily practice quizzes, full-length mock tests, performance tracking, and curated resources — all in one seamless platform. Built with a modern full-stack approach, the app uses Firebase for authentication and hosting, FastAPI for backend APIs deployed on Cloud Run, and Elasticsearch for fast search and analytics. The UI, developed in Next.js, ensures a responsive and intuitive user experience. CloudCertify helps users prepare consistently and pass GCP exams with confidence.",
-        link: "https://cloudcertify.tech",
+        link: "https://cloudcertify.web.app",
         techStack: ["Flutter", "Firebase", "FastAPI", "Bloc", "GoRouter", "Dio", "GetIt", "Injectable", "Clean Architecture"],
     },
     {
@@ -105,7 +120,8 @@ const Projects = [
         desc: "Developed a mobile app that streamlined the study experience for computer engineering students, providing access to over 1,500 previous papers, study materials, books, and DE reports from multiple colleges. Demonstrated strong problem-solving and product delivery skills by identifying student needs and delivering a high-impact solution.",
         link: "https://drive.google.com/drive/folders/1xfiahDTFZfNaA2IcU6Fb1R-IHu8Fseal",
         techStack: ["Flutter", "Firebase", "FireStore", "Remote Config",],
-    }
+    },
+
 ];
 
 export const ProjectPage = {
