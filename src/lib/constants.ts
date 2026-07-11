@@ -1,9 +1,7 @@
 export const PERSONAL_INFO = {
     name: 'Harsh Porwal',
     profession: 'Flutter Developer',
-    overview: "I'm a Flutter Developer with experience building scalable mobile and web applications using BloC/ GetX and REST APIs. I've created projects such as CSE Learning Hub and Cloud Certify, gaining hands-on experience with the Google Cloud GUI while learning GCP and Google ADK. Recognized for strong problem-solving skills, leadership, and teamwork, I'm dedicated to developing efficient, user - focused digital solutions.",
-
-    profileCartoon: "/harsh_cartoon_img.png",
+    overview: "Passionate Software Engineer with expertise in Flutter, Next.js, FastAPI, and Google Cloud Platform, building scalable AI-powered web and mobile applications. Experienced in AI-assisted development, applying Clean Architecture, SOLID principles, and industry best practices to deliver maintainable, production-ready software. Creator of products like TestSpecX, Maya AI, ReviewQR, and CloudCertify, leveraging Vertex AI, Gemini AI, FastAPI, and modern cloud technologies. Google Cloud Associate Cloud Engineer, Generative AI Leader, and Claude-certified professional dedicated to building innovative, user-centric solutions that solve real-world problems.",
     profileCartoon2: "/harsh_cartoon.png",
     email: 'Porwalharsh007@gmail.com',
     phone: '+91 8460946542',
@@ -22,17 +20,11 @@ export const BUTTON_LABELS = {
 };
 
 export const ABOUT_ME = {
-    detailedOverview: `I am a dedicated and adaptable Flutter Developer with hands-on experience in building scalable, user-focused mobile and web applications. I enjoy turning ideas into real, functional products and thrive in environments where I can solve problems, collaborate with diverse teams, and continuously learn new technologies.
+    detailedOverview: `Passionate Software Engineer with 2+ years of experience building scalable, high-performance mobile and web applications using Flutter and Next.js. I enjoy transforming ideas into impactful digital products by leveraging AI-assisted development while adhering to Clean Architecture, SOLID principles, coding standards, and industry best practices. My expertise includes Flutter, Next.js, BLoC, GetX, REST APIs, Firebase, Google Cloud Platform, and modern development workflows.
 
-My journey in software development has allowed me to work with international clients, take ownership of project modules, and deliver high-quality solutions within tight deadlines. I have experience implementing clean architecture, integrating REST APIs, managing state with BLoC and GetX, and enhancing user experience through intuitive UI/UX design. I also have practical exposure to the complete app release cycle for both the Google Play Store and Apple App Store.
+I have built and launched innovative products including TestSpecX, an AI-powered API testing platform; Maya AI, a multilingual devotional AI assistant; ReviewQR, an AI-driven review generation SaaS; and CloudCertify, a platform that helps learners prepare for Google Cloud certifications. These projects reflect my passion for combining AI, cloud technologies, and intuitive user experiences to solve real-world problems.
 
-I am passionate about creating products that genuinely help users—this is reflected in the applications I've built, such as CSE Learning Hub, which has supported over 1500 engineering students, and Cloud Certify, a platform designed to help learners prepare for Google Cloud certifications.
-
-In addition to mobile development, I have earned two Google Cloud certifications: Associate Cloud Engineer and Generative AI Leader. These certifications validate my expertise in Google Cloud Platform (GCP), including hands-on experience with Compute Engine, Cloud Storage, Cloud Run, Cloud Functions, Identity and Access Management (IAM), and Google ADK. I also have knowledge of AI technologies and generative AI solutions.
-
-Beyond technical skills, I am recognized for my leadership, communication, and problem-solving abilities. Whether guiding interns, collaborating with cross-functional teams, or exploring new technologies, I approach every challenge with curiosity, responsibility, and a strong desire to improve.
-
-I am constantly exploring better ways to build efficient, maintainable, and impactful digital solutions—and I'm motivated to continue growing as a developer while contributing meaningfully to the projects I work on.`,
+Certified as a Google Cloud Associate Cloud Engineer, Google Cloud Generative AI Leader, and Claude Code 101 & Introduction to Claude professional, I bring hands-on expertise in Google Cloud Platform (GCP), Vertex AI, cloud-native development, and AI-powered solutions. Driven by curiosity and continuous learning, I thrive in collaborative environments where I solve complex engineering challenges, explore emerging technologies, and build reliable, scalable products that create meaningful impact.`,
 };
 
 export const CERTIFICATIONS = [
@@ -125,7 +117,7 @@ const Projects = [
 
 export const ProjectPage = {
     projects: Projects,
-    description: "Developed multiple Flutter applications leveraging Firebase, Google Cloud Platform, and clean architecture. Built scalable, user-friendly apps for movie discovery, exam preparation, and student learning, integrating features like offline support, analytics, and monetization."
+    description: "Developed scalable mobile and web applications using Flutter, Next.js, Firebase, REST APIs, and Google Cloud Platform. Leveraged AI-assisted development to accelerate delivery while adhering to Clean Architecture, SOLID principles, coding standards, and industry best practices. Built feature-rich, high-performance applications with offline support, analytics, monetization, and seamless user experiences."
 }
 
 
@@ -239,7 +231,7 @@ export const SkillsPageData = {
 
 export const AboutPage = {
     title: "About Me",
-    subtitle: "Harsh Porwal – Mobile Developer | Google Cloud Certified | AI Enthusiast",
+    subtitle: "Harsh Porwal – Mobile App Developer | Google Cloud Certified | AI Enthusiast",
     highlights: [
         {
             icon: "Code2",
@@ -285,7 +277,7 @@ export const AboutPage = {
 export const Experience = [
     {
         company: "Aviato Consulting",
-        location: "Sydney, Australia",
+        location: "Sydney, Australia [Remote]",
         duration: "May 2024 - Present",
         role: "Flutter Developer",
         icon: "Briefcase",
@@ -293,7 +285,7 @@ export const Experience = [
     },
     {
         company: "Aviato Consulting",
-        location: "Sydney, Australia",
+        location: "Sydney, Australia [Remote]",
         duration: "March 2024 - April 2024",
         role: "Junior Flutter Developer",
         icon: "Code2",

@@ -22,7 +22,7 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-red-500/30 blur-xl rounded-lg"></div>
                     <div className="relative w-full h-full bg-gray-800 rounded-lg overflow-hidden">
                         <Image
-                            src={PERSONAL_INFO.profileCartoon}
+                            src={PERSONAL_INFO.profileCartoon2}
                             alt="Profile Photo"
                             fill
                             className="object-cover"
